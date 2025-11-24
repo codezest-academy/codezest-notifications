@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  notifications:
+    build:
+      context: .
+      args:
+        GITHUB_TOKEN: ${GITHUB_TOKEN}
+    ports:
+      - '3004:3004'
+    environment:
+      - NODE_ENV=development
+      - PORT=3004
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    depends_on:
+      - redis
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run dev
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:

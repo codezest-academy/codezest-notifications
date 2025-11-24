@@ -1,0 +1,51 @@
+{
+  "name": "@codezest-academy/codezest-notifications",
+  "version": "1.0.0",
+  "description": "Notification service for CodeZest platform",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "nodemon src/server.ts",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
+    "test": "jest",
+    "test:unit": "jest tests/unit",
+    "test:integration": "jest tests/integration",
+    "test:all": "jest"
+  },
+  "keywords": [],
+  "author": "CodeZest Team",
+  "license": "ISC",
+  "dependencies": {
+    "@codezest-academy/codezest-cache": "^1.0.1",
+    "@codezest-academy/codezest-db": "^1.0.5",
+    "chalk": "^5.3.0",
+    "bullmq": "^5.0.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "ioredis": "^5.0.0",
+    "strip-ansi": "^7.0.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "winston": "^3.8.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "@types/supertest": "^6.0.0",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "nodemon": "^3.0.0",
+    "prettier": "^3.0.0",
+    "supertest": "^6.0.0",
+    "ts-jest": "^29.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  }
+}

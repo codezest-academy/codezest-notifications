@@ -1,0 +1,87 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": ["class", "interface", "typeAlias", "enum", "typeParameter"],
+        "format": ["PascalCase"],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^(I[^a-z]|.*Interface$)",
+          "match": false
+        }
+      },
+      {
+        "selector": "class",
+        "suffix": ["Dto"],
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "Dto$",
+          "match": true
+        }
+      },
+      {
+        "selector": "class",
+        "suffix": [
+          "Service",
+          "Controller",
+          "Repository",
+          "Mapper",
+          "Guard",
+          "Interceptor",
+          "Filter",
+          "Provider"
+        ],
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": ["variable", "function", "parameter"],
+        "format": ["camelCase", "PascalCase"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "variable",
+        "modifiers": ["const"],
+        "format": ["camelCase", "UPPER_CASE"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "variable",
+        "modifiers": ["const", "exported"],
+        "format": ["camelCase", "UPPER_CASE"]
+      },
+      {
+        "selector": "enumMember",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": [
+          "objectLiteralProperty",
+          "classProperty",
+          "classMethod",
+          "objectLiteralMethod",
+          "parameterProperty"
+        ],
+        "format": ["camelCase", "UPPER_CASE"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "classProperty",
+        "modifiers": ["private"],
+        "format": ["camelCase"],
+        "leadingUnderscore": "require"
+      }
+    ]
+  }
+}

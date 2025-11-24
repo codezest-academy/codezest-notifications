@@ -1,0 +1,47 @@
+# Source files (only publish dist/)
+src/
+tsconfig.json
+*.ts
+!*.d.ts
+
+# Context and planning files
+.context/
+
+# Development files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.*
+
+# Testing
+coverage/
+*.test.ts
+*.spec.ts
+
+# Documentation (keep README.md, ARCHITECTURE.md)
+# But exclude planning docs
+.context/
+
+# Git
+.git/
+.gitignore
+
+# CI/CD
+.github/
+
+# Logs
+*.log
+logs/
+
+# Keep these files in published package:
+# - dist/ (built JavaScript + TypeScript definitions)
+# - prisma/ (schema + migrations)
+# - README.md
+# - ARCHITECTURE.md
+# - package.json
+# - LICENSE
